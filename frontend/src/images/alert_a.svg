@@ -1,0 +1,11 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ICON/alert_a">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M8.00293 7.92856C8.00293 5.79598 9.77532 4.04761 11.9861 4.04761C14.1969 4.04761 15.9693 5.79598 15.9693 7.92856H16.9693C16.9693 5.22208 14.7273 3.04761 11.9861 3.04761C9.24491 3.04761 7.00293 5.22208 7.00293 7.92856H8.00293ZM7.00293 7.92859V14.5H8.00293V7.92859H7.00293ZM15.9693 7.92859V14.5H16.9693V7.92859H15.9693Z" fill="white"/>
+<path id="Rectangle 1" d="M6 15.5C6 14.9477 6.44772 14.5 7 14.5H17C17.5523 14.5 18 14.9477 18 15.5V16.5H6V15.5Z" stroke="white" stroke-linejoin="round"/>
+<path id="Rectangle 2" d="M5 18.5C5 17.3954 5.89543 16.5 7 16.5H17C18.1046 16.5 19 17.3954 19 18.5V19.5H5V18.5Z" stroke="white" stroke-linejoin="round"/>
+<path id="Vector" d="M4.49985 7.08582C4.13792 7.44774 3.91406 7.94774 3.91406 8.50003C3.91406 9.05231 4.13792 9.55231 4.49985 9.91424" stroke="white" stroke-linecap="round"/>
+<path id="Vector_2" d="M19.4142 7.08582C19.7761 7.44774 20 7.94774 20 8.50003C20 9.05231 19.7761 9.55231 19.4142 9.91424" stroke="white" stroke-linecap="round"/>
+<path id="Vector_3" d="M3 5.5C2.38215 6.26777 2 7.32843 2 8.5C2 9.67157 2.38215 10.7322 3 11.5" stroke="white" stroke-linecap="round"/>
+<path id="Vector_4" d="M21 5.5C21.6179 6.26777 22 7.32843 22 8.5C22 9.67157 21.6179 10.7322 21 11.5" stroke="white" stroke-linecap="round"/>
+</g>
+</svg>

@@ -1,0 +1,648 @@
+.detail-layout{
+    position: relative; 
+    display: flex;
+    background-color: #11121e;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-size: 0.8vw; 
+    padding: 1.2vw;
+    flex-direction: column;
+    box-sizing: border-box;
+} 
+
+.detail-top-section{
+    flex: 0.8;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.unit-number{
+    display: flex;
+    width: 54%;
+    height: 100%;
+    align-items: center;
+    gap: 0.8vw;
+    font-size: 2vw;
+    color: #fff;
+}
+
+.select-section{
+     position: relative;
+    display: flex;
+    width: auto;
+    height: 100%;
+}
+
+.select-component{
+    display: flex; ;
+    padding: 0.5vw 1vw;
+    border-radius: 1vw;
+    background-color: #2a2b36; 
+    border: solid #8E91AF; 
+    gap: 0.8vw;
+    text-align: center;
+    align-items: center; 
+    font-size: 0.8vw;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    width: auto;
+    margin-left: auto; /* 추가 */
+    cursor: pointer;
+}
+
+
+.select-date-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    white-space: nowrap;
+    justify-content: space-between;
+    gap: 0.8vw;
+}
+
+
+
+.select-today, .select-week, .select-month, .select-calendar{
+    padding: 0.5vw 1vw;
+    border-radius: 1vw;
+    background-color: #2a2b36;
+    color: white;
+    font-size: 0.8vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    cursor: pointer;
+}
+
+.select-component:hover, .select-today:hover, .select-week:hover, .select-month:hover, .select-calendar:hover {
+    background-color: #0177FB; 
+    color: #ffffff; 
+}
+
+.select-component.active, .select-today.active, .select-week.active, .select-month.active, .select-calendar.active {
+    background-color: #0177FB; 
+    color: #ffffff; 
+}
+
+.select-component.inactive, .select-today.inactive, .select-week.inactive, .select-month.inactive, .select-calendar.inactive {
+    background-color: #2a2b36; 
+    color: #ffffff;
+    cursor: default;
+}
+
+
+
+/* .active {
+    background-color: #0177FB !important;
+    color: #ffffff !important;
+} */
+
+
+.dropdown-menu {
+    top: 4vw;
+    left: 42vw;
+    position: absolute;
+    background-color: #2a2b36;
+    border-radius: 0.5vw;
+    box-shadow: 19px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 11.8vw;
+    pointer-events: auto;
+    z-index: 1000;
+  }
+  
+  .dropdown-menu div {
+    padding: 0.5vw 1vw;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu div:hover {
+    background-color: #0177FB;
+  }
+
+.select-calendar {
+    padding: 0.5vw 1vw;
+    border-radius: 1vw;
+    background-color: #252736;
+    color: white;
+    font-size: 0.8vw;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 배경색 전환 효과 */
+  }
+
+  .select-calendar.active {
+    background-color: #0177FB;
+}
+
+  .custom-datepicker-input {
+    
+    padding-left: 0vw !important;
+    padding-right: 1vw !important;
+    text-align: center !important;
+    background-color: #495170 !important;
+    margin : 0.6vw 0vw 0.7vw 0vw !important;
+    overflow: hidden !important;
+}
+
+.custom-datepicker-input-right{
+    background-color: #495170 !important;
+
+}
+
+.react-datepicker__input-container .react-datepicker__calendar-icon {
+    position: absolute;
+    box-sizing: content-box;
+    margin-left: 7.5vw; 
+    margin-top: 0.55vw; 
+}
+
+
+.react-datepicker__calendar-icon {
+    fill: #E7E8EE; /* 원하는 색상으로 변경 */
+  }
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .date-picker-modal {
+     background-color: #1D1D29;
+     border-radius: 1vw;
+     z-index: 1; /* 다른 요소 위에 표시되도록 설정 */
+     width: 100%;
+  }
+
+  .selectTime-container{
+    display: flex;
+    background-color:  #495170;
+    justify-items: center;
+    flex-direction: row; 
+    align-items: center;
+    border-radius: 1.2vw;
+    padding-left: 0.8vw;
+    padding-top: 0vw;
+  }
+
+  .date-picker-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    gap: 1.2vw;
+    width: 100%;
+    height: 100%;
+    padding-top: 1.2vw;
+    padding-bottom: 1.2vw;
+  }                  
+  
+  .date-picker-container span {
+     align-items: center;
+  }
+  
+.react-datepicker__navigation{
+    top: 0vw !important;
+}
+
+.react-datepicke{
+    width: 133% !important;
+    margin-right: 14vw !important;
+}
+
+
+.submit_btn{
+     padding: 0.7vw 11vw;
+     background-color: #0177FB;
+     color: white;
+     border-radius: 1.2vw;
+     cursor: pointer;
+  }
+
+.calendar-icon{
+    width: 1.2vw;
+    height: 1.2vw;
+}
+
+.dropdown-icon{
+    width: 0.8vw;
+    height: 0.8vw;
+}
+
+.detail-bottom-section{
+    /* flex: 9.2; */
+    height: 92%;
+    width: 100%;
+    display: flex;
+    gap: 1.2vw;
+    margin-top: 1vw;
+}
+
+.detail-bottom-left-section, .detail-bottom-right-section {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.detail-bottom-left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vw;
+}
+
+.pieChart-section, .barChart-section {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 중앙 정렬 */
+    box-sizing: border-box;
+}
+
+.pieChart-section{
+    display: flex;
+    height: 40%;
+}
+
+.barChart-section{
+    display: flex;
+    height: 60%;
+}
+
+.pieChart-inner{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.8vw;
+    background-color: #252736;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6vw;
+    
+}
+
+.pieChart-inner-left{
+    padding-left: 2vw;
+    padding-right: 1vw;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.pieChart-inner-right{
+    width: 60%;
+    height: 80%;
+    flex-direction: column; 
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.type-section, .total-section, .ng-section {
+    flex: 1;
+    color: #FFF; 
+    width: 90%;
+    flex-direction: column;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    overflow: hidden;
+    gap: 0.1vw;
+}
+.type-title, .total-title, .ng-title {
+    font-size: 0.8vw;
+    color: #8E91AF;
+
+}
+.type-text{
+    font-size:1.6vw ;
+}
+
+.total-text{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap:0.4vw;
+}
+
+.total-count{
+    font-size:1.6vw ;
+}
+
+.ok-percent{
+    color: #40DBC1;
+    font-size: 1.2vw;
+}
+
+.ng-text{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap:0.4vw;
+}
+
+.ng-count{
+    font-size:1.6vw ;
+}
+
+.ng-percent{
+    color:#FF4E4E;
+    font-size: 1.2vw;
+}
+
+
+.barChart-inner{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+
+.barChart-top{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    background-color: #252736;
+    align-items: center;
+    gap: 0.4vw;
+    font-size: 0.8vw;
+    border-top-left-radius: 0.8vw;
+    border-top-right-radius: 0.8vw;
+    border-bottom: solid  #495170 0.1vw;
+    color: #FFF;
+}
+
+.barChart-bottom{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    background-color: #252736;
+    border-bottom-left-radius: 0.8vw;
+    border-bottom-right-radius: 0.8vw;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+.barChart-bottom-toggle {
+    display: flex;
+    width: 95%;
+    /* height: 30%; */
+    margin-bottom: 1vw;
+    flex-direction: row;
+    gap: 0.4vw;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.first-five, .six-to-ten {
+    margin-top: 1vw;
+    margin-right: 0.4vw;
+    padding: 0.6vw 1.2vw;
+    border-radius:  1.2vw;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+/* 활성화 상태 */
+.first-five.active, .six-to-ten.active {
+    background-color: #0177FB;
+}
+
+.first-five.inactive, .six-to-ten.inactive {
+    background-color: #495170;
+}
+
+      
+  .chart-toggle button {
+    background-color: #2a2b36;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .chart-toggle button.active {
+    background-color: #0177FB;
+  }
+
+  .barChart-bottom-graph {
+    width: 95%;
+    height: 78%;
+    overflow: hidden;
+  }
+
+.detail-nav-icon{
+    width: 1.2vw;
+    cursor: pointer;
+}
+
+.barChart-icon{
+    width: 1.2vw;
+    margin-left: 0.8vw;
+}
+
+.detail-defect-list-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(14, 13, 13);
+}
+
+.detail-defect-list-inner-top {
+    height: 6%;
+    width: 100%;
+    display: flex;
+    background-color: #252736;
+    align-items: center;
+    gap: 0.4vw;
+    border-top-left-radius: 0.8vw;
+    border-top-right-radius: 0.8vw;
+    border-bottom: solid  #495170 0.1vw;
+    color: #FFF;
+
+}
+
+.detail-defect-list-inner-bottom {
+    height: 94%;
+    width: 100%;
+    display: flex;
+    background-color: #252736;
+    border-bottom-left-radius: 0.8vw;
+    border-bottom-right-radius: 0.8vw;
+    flex-direction: column;
+}
+ 
+.column-section{
+    display: flex;
+    height: 8%; /* 8% */
+    width: 100%;
+}
+
+.ng-name{
+    flex:7;
+    margin-left:1.8vw;
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center;
+    color: #8E91AF;
+}
+
+.ng-date{ 
+    margin-right: 1.8vw;
+    flex:3;
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center;
+    color: #8E91AF;
+}
+
+.content-section{
+ /* 80% */
+    width: 100%;
+    height: 80%;
+}
+
+
+.inner-detail-content{
+    margin-left: 1.2vw;
+    margin-right: 1.2vw;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.defect-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2vw;
+    margin-bottom: 1.2vw;
+    background-color: #11121D;
+    border-radius: 0.8vw;
+    margin-right: 1.5vw;
+    gap: 0.6vw;
+}
+  
+  .defect-type {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8vw;
+  }
+  
+  .defect-info {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  
+.defect-part {
+    font-weight: bold;
+    height: 30%;
+    width: 100%;
+    padding-bottom: 0.6vw;
+    color: #FFFFFF;
+}
+
+  .defect-type {
+    height: 70%;
+    width: 100%;
+  }
+  
+  .defect-badge {
+    background-color: #252736;
+    color: white;
+    padding: 0.4vw 0.6vw;
+    border-radius: 0.2vw;    
+  }
+  
+  .defect-type-text{
+    font-size: 0.8vw;
+    color: #8E91AF;
+    margin-right: 0.4vw;
+  }
+
+  .defect-date {
+    display: flex;
+    color: #ccc;
+    width: 20%;
+    height: 100%;
+    justify-content: center; 
+    align-items: center; 
+
+  }
+
+
+  .inner-detail-content::-webkit-scrollbar {
+    width: 0.4vw;
+    color: #70749A;
+  }
+  
+  .inner-detail-content::-webkit-scrollbar-track {
+    width: 0.2vw;
+    background-color: #11121D; 
+    border-radius: 0.5vw; 
+  }
+  
+  .inner-detail-content::-webkit-scrollbar-thumb {
+    background-color: #70749A; 
+    border-radius: 0.2vw; 
+    border: none; 
+  }
+  
+  .inner-detail-content::-webkit-scrollbar-thumb:hover {
+    background-color: #50536e; 
+  }
+
+
+.print-section{
+    height: 12%; /* 12% */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center;
+}
+
+.print-btn{
+    display: flex;
+    background-color:#495170;
+    align-items: center; /* 아이콘과 텍스트를 수직 가운데 정렬 */
+    height: 2.4vw;
+    width: 8.75vw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.2vw;
+    color : #fff;
+}
+
+.print-btn:hover{
+    background-color: #11121D;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.print-icon{
+    width: 1.2vw;
+    height: 1.2vw;
+}
+
+.defect-list-icon{
+    width: 1.2vw;
+    margin-left: 0.8vw;
+}
+
+.detail-loading{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+

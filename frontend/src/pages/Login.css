@@ -1,0 +1,143 @@
+.login-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #11121E;
+    font-size: 0.8vw;
+  }
+
+.login-icon {
+  width: 7%;
+  margin: 0.4vw;
+}
+.login-title {
+  font-size: 2.6vw;
+  margin: 0.2vw;
+}
+.login-subtitle {
+  font-size: 0.8vw;
+  margin: 0.2vw;
+}
+.login-version {
+  font-size: 0.8vw;
+  margin: 0.2vw;
+}
+.login-form {
+    height: 46%;
+    width: 31%;
+    margin: 1.2vw;
+    flex-direction: column;
+    background-color: #1D1D29;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8vw;
+    overflow: hidden;
+  }
+
+.login-form-title {
+  height: 15%;
+  width: 100%;
+  padding-left: 2vw;
+  align-items: center;
+  color: white;
+  justify-content: left;
+  display: flex;
+  font-size: 1vw;
+  border-bottom: solid 0.1vw;
+  border-color: #495170;
+
+  }
+
+.login-form-content {
+  flex-direction: column;
+  width: 100%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8vw;
+  overflow: hidden;
+  }
+
+.input-label {
+  width: 80%;
+  margin: 0.3vw;
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: #2E3041;
+  border-radius: 0.4vw;
+  border: none;
+  margin: 0.3vw 0vw 0.9vw 0vw;
+  height: 15%;
+  width: 77%;
+  color: white;
+  padding-left: 1.2vw;
+  font-size: 0.8vw;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #253869;
+  border-radius: 0.4vw;
+  border: none;
+  margin: 0.3vw 0vw 0.9vw 0vw;
+  /* margin: 0vw; */
+  height: 15%;
+  width: 80%;
+}
+
+.row-layout {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+.left-side input[type="checkbox"] {
+  margin-right: 0.6vw;
+  width: 1.2vw;
+  height: 1.6vh;
+  cursor: pointer;
+}
+
+.forgot-password-link {
+  font-size: 0.8vw;
+  color: #EEF3FE; 
+  transition: background-color 0.4s ease;
+}
+
+.forgot-password-link:hover {
+  color: #aeb2ba; 
+}
+
+.forgot-password-link:active {
+  color: red; 
+}
+
+.login-button {
+  font-size: 1.0vw;
+  background-color: #0177FB;
+  width:33%;
+  height: 15%;
+  cursor: pointer;
+  margin-top: 1.2vw;
+  border-radius: 0.4vw;
+  color: white;
+  border:none;
+  transition: background-color 0.4s ease;
+  
+}
+.login-button:hover {
+  background-color: #0056b3;
+}

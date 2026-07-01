@@ -1,0 +1,177 @@
+
+.home-layout {
+    display: flex;
+    flex-direction: column;
+    background-color: #11121e;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-size: 2vw;
+  }
+
+  .home-title {
+    display: flex;
+    color: white;
+    overflow: hidden;
+    align-items: center;
+    justify-content: left;
+    height: 5%;
+    padding: 1.6vw 0 0 2.0vw;
+    gap: 0.8vw;
+  }
+
+  .home-title-img {
+    display: flex;
+    flex-direction: column;
+    width: 1.6vw;
+  }
+
+  .home-title-text {
+    color: white;
+    overflow: hidden;
+    font-size: 2vw;
+    font-weight: 300;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.2vw;
+    height: 100%;
+    padding: 2.0vw 2.0vw 1.6vw 2.0vw;
+  }
+  
+
+  
+  .grid-item {
+    background-color: #252736;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8vw;
+    font-size: 1.2vw;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.4s ease; 
+  }
+  .grid-item:hover {
+    background-color: #495170;
+  }
+  
+  .grid-item .content-title {
+    height: 15%;
+    width: 100%;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    display: flex;
+    font-weight: bold;
+    border-bottom: solid 0.1vw;
+    border-color: #495170;
+  }
+  .grid-item .content-title .content-title-left {
+    margin-left: 0.8vw;
+  }
+  .arrowM {
+    width: 1.2vw;
+    margin-right: 0.8vw;
+  }
+  .grid-item .content-inner {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .grid-item .content-inner .inner-right {
+    flex:2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .grid-item .content-inner .inner-right-center {
+    padding-left: 0.6vw;
+    width: 60%;
+    flex-direction: column;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    font-size: 0.6vw;
+    overflow: hidden;
+    color: #8E91AF;
+    gap: 1.2vw;
+  }
+
+  .grid-item .content-inner .inner-right .inner-right-box {
+    gap: 0.2vw;
+  }
+
+  .grid-item .content-inner .inner-right .text-grid {
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    height: 1.6vw;
+  }
+  .grid-item .content-inner .inner-right .num-ok-grid {
+    font-size: 1.0vw;
+    color:#40DBC1;
+    font-weight: bold;
+  }
+  .grid-item .content-inner .inner-right .num-ng-grid {
+    font-size: 1.0vw;
+    color: #FF4E4E;
+    font-weight: bold;
+  }
+
+  .inner-left .num {
+    color: #EEF3FE;
+    font-size: 3.0vw;
+  }
+  .grid-item .content-inner .inner-left {
+    flex: 4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #252736;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.4s ease; 
+  }
+  .overlay:hover {
+    background-color: #495170;
+  }
+  
+  .loading-gif {
+    width: 10vw;
+    height: 10vw;
+  }

@@ -1,0 +1,60 @@
+from pydantic import BaseModel
+
+class InferenceData2(BaseModel):
+    ClientName: str
+    Datetime: str
+    Result: str
+    DefectCount: str
+    L_Color: str
+    L_Hole: str
+    L_Taint: str
+    L_Ripped: str
+    L_Line: str
+    L_Dye: str
+    L_Oil: str
+    L_Crease: str
+    R_Color: str
+    R_Hole: str
+    R_Taint: str
+    R_Ripped: str
+    R_Line: str
+    R_Dye: str
+    R_Oil: str
+    R_Crease: str
+    NGImagePath: str
+    ORGImagePath: str
+    TodayCount: str
+
+class InferenceData(BaseModel):
+    ClientName: str
+    Part: str
+    Datetime: str
+    Result: str
+    DefectCount: str
+    H_BootTear: str
+    H_BootCurl: str
+    H_BootBurr: str
+    H_BootAssembly: str
+    H_GreaseOut: str
+    H_PBallDamage: str
+    H_PBallLot: str
+    H_CRingErr: str
+    H_CRingTwist: str
+    H_ORingErr: str
+    H_ORingTwist: str
+    SocketDamage: str
+    SocketGroove: str
+    L_BootTear: str
+    L_BootCurl: str
+    L_BootBurr: str
+    L_BootAssembly: str
+    L_GreaseOut: str
+    L_PBallDamage: str
+    L_CRingErr: str
+    L_CRingTwist: str
+    L_ORingErr: str
+    L_ORingTwist: str
+    DefectGroup: str
+    NGImagePath: str
+    ORGImagePath: str
+

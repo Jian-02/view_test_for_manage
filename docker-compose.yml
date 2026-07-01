@@ -1,0 +1,38 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend-container
+    ports:
+      - "3001:3001" # React 개발 서버는 기본적으로 3000 포트를 사용합니다
+    volumes:
+      - ./frontend:/app # 소스 코드 변경사항을 실시간으로 반영하기 위한 볼륨 설정
+      - /app/node_modules # node_modules를 컨테이너 내부에 유지
+      - /app/build # Build 내부에 유지
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Hot reloading을 위한 설정
+      - HOST=0.0.0.0
+      - PORT=3001
+    networks:
+      - app_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend-container
+    ports:
+      - "8004:8004" # Backend 서비스는 8005 포트에서 제공
+    volumes:
+      - backend_database:/app/database  # /app/database를 Volume으로 마운트
+
+    networks:
+      - app_network
+volumes:
+  backend_database:
+    driver: local
+
+networks:
+  app_network:
+    driver: bridge
