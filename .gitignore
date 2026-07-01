@@ -5,6 +5,8 @@ node_modules/
 # Cache
 .cache/
 **/.cache/
+__pycache__/
+**/__pycache__/
 
 dist/
 build/
