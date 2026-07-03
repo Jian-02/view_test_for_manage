@@ -47,6 +47,8 @@ const FIELDS: FieldDef[] = [
   { key: 'MAPPING_PATH', label: '매핑 파일 경로', group: 'Mapper' },
 ];
 
+const GROUPS = Array.from(new Set(FIELDS.map((f) => f.group)));
+
 interface StatusData {
   log_file: string | null;
   log_tail: string[];
@@ -75,6 +77,7 @@ const GatewayAdmin: React.FC = () => {
   const [saveMessage, setSaveMessage] = useState('');
   const [search, setSearch] = useState('');
   const [showLog, setShowLog] = useState(false);
+  const [activeGroup, setActiveGroup] = useState<string>(GROUPS[0]);
 
   const fetchAll = useCallback(async () => {
     if (!id) return;
@@ -146,16 +149,23 @@ const GatewayAdmin: React.FC = () => {
     return `${Math.floor(sec / 3600)}시간 전`;
   };
 
-  const filteredFields = useMemo(() => {
-    if (!search.trim()) return FIELDS;
-    const q = search.trim().toLowerCase();
-    return FIELDS.filter(
-      (f) =>
-        f.label.toLowerCase().includes(q) ||
-        f.key.toLowerCase().includes(q) ||
-        f.group.toLowerCase().includes(q)
-    );
-  }, [search]);
+  const isSearching = search.trim().length > 0;
+
+  const fieldsToShow = useMemo(() => {
+    if (isSearching) {
+      const q = search.trim().toLowerCase();
+      return FIELDS.filter(
+        (f) =>
+          f.label.toLowerCase().includes(q) ||
+          f.key.toLowerCase().includes(q) ||
+          f.group.toLowerCase().includes(q)
+      );
+    }
+    return FIELDS.filter((f) => f.group === activeGroup);
+  }, [search, activeGroup, isSearching]);
+
+  const groupDirtyCount = (group: string) =>
+    FIELDS.filter((f) => f.group === group && dirtyKeys.has(f.key)).length;
 
   return (
     <div className="gwadmin-layout">
@@ -197,7 +207,7 @@ const GatewayAdmin: React.FC = () => {
           <div className="gwadmin-toolbar">
             <input
               className="gwadmin-search"
-              placeholder="설정 항목 검색..."
+              placeholder="설정 항목 검색... (모든 그룹에서 검색)"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -216,35 +226,57 @@ const GatewayAdmin: React.FC = () => {
             </div>
           </div>
 
-          <div className="gwadmin-table">
-            <div className="gwadmin-row gwadmin-header">
-              <div className="gwadmin-col gwadmin-col-group">그룹</div>
-              <div className="gwadmin-col gwadmin-col-label">설정 항목</div>
-              <div className="gwadmin-col gwadmin-col-key">Key</div>
-              <div className="gwadmin-col gwadmin-col-value">값</div>
+          <div className="gwadmin-body">
+            <div className="gwadmin-sidebar">
+              {GROUPS.map((g) => {
+                const dirty = groupDirtyCount(g);
+                return (
+                  <div
+                    key={g}
+                    className={`gwadmin-tab ${!isSearching && activeGroup === g ? 'active' : ''}`}
+                    onClick={() => {
+                      setActiveGroup(g);
+                      setSearch('');
+                    }}
+                  >
+                    <span className="gwadmin-tab-label">{g}</span>
+                    {dirty > 0 && <span className="gwadmin-tab-dot">{dirty}</span>}
+                  </div>
+                );
+              })}
             </div>
 
-            {filteredFields.map((field) => (
-              <div
-                className={`gwadmin-row gwadmin-body-row ${dirtyKeys.has(field.key) ? 'dirty' : ''}`}
-                key={field.key}
-              >
-                <div className="gwadmin-col gwadmin-col-group">{field.group}</div>
-                <div className="gwadmin-col gwadmin-col-label">{field.label}</div>
-                <div className="gwadmin-col gwadmin-col-key">{field.key}</div>
-                <div className="gwadmin-col gwadmin-col-value">
-                  <input
-                    type={field.type === 'password' ? 'password' : 'text'}
-                    value={values[field.key] ?? ''}
-                    onChange={(e) => handleChange(field.key, e.target.value)}
-                  />
-                </div>
+            <div className="gwadmin-panel">
+              <div className="gwadmin-panel-title">
+                {isSearching ? `"${search}" 검색 결과` : activeGroup}
               </div>
-            ))}
 
-            {filteredFields.length === 0 && (
-              <div className="gwadmin-empty">검색 결과가 없습니다.</div>
-            )}
+              {fieldsToShow.length === 0 ? (
+                <div className="gwadmin-empty">검색 결과가 없습니다.</div>
+              ) : (
+                <div className="gwadmin-field-grid">
+                  {fieldsToShow.map((field) => (
+                    <div
+                      className={`gwadmin-field ${dirtyKeys.has(field.key) ? 'dirty' : ''}`}
+                      key={field.key}
+                    >
+                      <div className="gwadmin-field-head">
+                        <span className="gwadmin-field-label">{field.label}</span>
+                        {isSearching && (
+                          <span className="gwadmin-field-group-tag">{field.group}</span>
+                        )}
+                      </div>
+                      <div className="gwadmin-field-key">{field.key}</div>
+                      <input
+                        type={field.type === 'password' ? 'password' : 'text'}
+                        value={values[field.key] ?? ''}
+                        onChange={(e) => handleChange(field.key, e.target.value)}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </>
       )}
