@@ -1,0 +1,194 @@
+.gwadmin-layout {
+  display: flex;
+  flex-direction: column;
+  background-color: #11121e;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  padding: 2vw;
+  box-sizing: border-box;
+  color: #eef3fe;
+  font-size: 0.8vw;
+}
+
+.gwadmin-breadcrumb {
+  color: #0177fb;
+  cursor: pointer;
+  font-size: 0.8vw;
+  margin-bottom: 0.8vw;
+  width: fit-content;
+}
+
+.gwadmin-title {
+  font-size: 1.4vw;
+  color: white;
+  margin-bottom: 1vw;
+  display: flex;
+  align-items: baseline;
+  gap: 1vw;
+}
+
+.gwadmin-path {
+  font-size: 0.7vw;
+  color: #8e91af;
+  font-weight: normal;
+}
+
+.gwadmin-status-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2vw;
+  background-color: #252736;
+  border-radius: 0.6vw;
+  padding: 0.8vw 1.2vw;
+  margin-bottom: 0.8vw;
+}
+
+.gwadmin-status-badge {
+  padding: 0.3vw 0.8vw;
+  border-radius: 1vw;
+  font-weight: bold;
+  font-size: 0.75vw;
+}
+
+.gwadmin-status-badge.running {
+  background-color: #1f4d3f;
+  color: #40dbc1;
+}
+
+.gwadmin-status-badge.stopped {
+  background-color: #4d1f22;
+  color: #ff4e4e;
+}
+
+.gwadmin-status-item {
+  color: #8e91af;
+  font-size: 0.75vw;
+}
+
+.gwadmin-log-toggle {
+  margin-left: auto;
+  color: #0177fb;
+  cursor: pointer;
+  font-size: 0.75vw;
+}
+
+.gwadmin-log-tail {
+  background-color: #252736;
+  border-radius: 0.6vw;
+  padding: 0.8vw;
+  margin-bottom: 0.8vw;
+  max-height: 16vw;
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 0.65vw;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.gwadmin-loading {
+  color: #8e91af;
+}
+
+.gwadmin-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  margin-bottom: 0.8vw;
+}
+
+.gwadmin-search {
+  flex: 1;
+  max-width: 24vw;
+  background-color: #252736;
+  border: solid 0.05vw #495170;
+  border-radius: 0.4vw;
+  padding: 0.6vw 0.8vw;
+  color: white;
+  font-size: 0.8vw;
+}
+
+.gwadmin-toolbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+}
+
+.gwadmin-save-message {
+  color: #40dbc1;
+  font-size: 0.75vw;
+}
+
+.gwadmin-dirty-count {
+  color: #ffd97a;
+  font-size: 0.75vw;
+}
+
+.gwadmin-save-btn {
+  background-color: #0177fb;
+  color: white;
+  border: none;
+  border-radius: 0.5vw;
+  padding: 0.6vw 1.6vw;
+  font-size: 0.85vw;
+  cursor: pointer;
+}
+
+.gwadmin-save-btn:disabled {
+  background-color: #495170;
+  cursor: default;
+}
+
+.gwadmin-table {
+  background-color: #252736;
+  border-radius: 0.6vw;
+  overflow: hidden;
+  flex: 1;
+}
+
+.gwadmin-row {
+  display: flex;
+  align-items: center;
+  padding: 0.6vw 1vw;
+  border-bottom: solid 0.05vw #495170;
+}
+
+.gwadmin-header {
+  color: #8e91af;
+  font-size: 0.75vw;
+  background-color: #1d1d29;
+  position: sticky;
+  top: 0;
+}
+
+.gwadmin-body-row.dirty {
+  background-color: rgba(255, 217, 122, 0.08);
+}
+
+.gwadmin-col-group { width: 14%; color: #8e91af; }
+.gwadmin-col-label { width: 30%; }
+.gwadmin-col-key { width: 24%; color: #8e91af; font-family: monospace; font-size: 0.7vw; }
+.gwadmin-col-value { width: 32%; }
+
+.gwadmin-col-value input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #11121e;
+  border: solid 0.05vw #495170;
+  border-radius: 0.4vw;
+  padding: 0.5vw 0.7vw;
+  color: white;
+  font-size: 0.78vw;
+}
+
+.gwadmin-col-value input:focus {
+  outline: none;
+  border-color: #0177fb;
+}
+
+.gwadmin-empty {
+  padding: 2vw;
+  text-align: center;
+  color: #8e91af;
+}

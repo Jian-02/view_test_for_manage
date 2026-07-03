@@ -14,6 +14,9 @@ import gnb3 from './images/gnb_3_a.svg'
 import ModalComponent from './components/Popup';
 import LoginPage from './pages/Login';
 import ResetPassword from './pages/ResetPassword'
+import GatewayAdmin from './pages/GatewayAdmin';
+import GatewayList from './pages/GatewayList';
+import gnb4 from './images/gnb_4_a.svg' //
 import { useNavigate } from 'react-router-dom';
 import DatetimeDisp from './components/Datetime'
 import { AlertSocketComponent } from './components/Websocket';
@@ -40,6 +43,8 @@ const AppLayout: React.FC = () => {
           <Route path="/alert" element={<Alert />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/gateway-admin" element={<GatewayList />} />
+          <Route path="/gateway-admin/:id" element={<GatewayAdmin />} />
         </Routes>
       </main>
     </div>
@@ -214,6 +219,12 @@ useEffect(() => {
             <Link to="/"  className={`link-item ${isLinkActive('/') ? 'active' : ''}`}>
               <img src={gnb1} alt="Factory Icon" className="nav-icon" />
               <span className="nav-text">홈 대시보드</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/gateway-admin" className={`link-item ${isLinkActive('/gateway-admin') ? 'active' : ''}`}>
+              <img src={gnb2} alt="Gateway Icon" className="nav-icon" />
+              <span className="nav-text">게이트웨이 관리</span>
             </Link>
           </li>
         </ul>

@@ -8,6 +8,7 @@ from starlette.middleware.cors import CORSMiddleware
 import uvicorn
 from controller.home_controller import home_router
 from controller.detail_controller import detail_router
+from controller.gateway_controller import gateway_router
 from websocket.websocket import ws_router
 
 import logging
@@ -21,7 +22,8 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3001", "http://192.168.30.8:8004"],
+    # allow_origins=["http://localhost:3001", "http://192.168.30.8:8004"],
+    allow_origins=["*"],  # 모든 도메인 허용
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -30,6 +32,9 @@ app.add_middleware(
 # HTTP router
 app.include_router(home_router)
 app.include_router(detail_router)
+
+# Gateway router
+app.include_router(gateway_router)
 
 # Websocket router
 app.include_router(ws_router)
